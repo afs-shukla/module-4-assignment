@@ -26,13 +26,13 @@ function RoutesConfig($stateProvider,$urlRouterProvider){
    $stateProvider
     .state('home',{
         url:'/',
-        templateUrl: '/src/menu/templates/home.template.html',
+        templateUrl: 'src/menu/templates/home.template.html',
 
     })
        
     .state('categories',{
         url: '/categories',
-        templateUrl: '/src/menu/templates/categories.template.html',
+        templateUrl: 'src/menu/templates/categories.template.html',
         controller: 'MainMenuController as mainMenuCtrl',
         resolve: {
             categories:['MenuDataService',function(MenuDataService){
@@ -43,7 +43,7 @@ function RoutesConfig($stateProvider,$urlRouterProvider){
     })
     .state('categoryDetails',{
         url: '/categoryDetails/{shortName}',
-        templateUrl: '/src/menu/templates/itemdetails.template.html',
+        templateUrl: 'src/menu/templates/itemdetails.template.html',
         controller: 'MenuItemDetailsController as itemDetailsCtrl',
         resolve: {
             items:['$stateParams','MenuDataService',function($stateParams,MenuDataService){
